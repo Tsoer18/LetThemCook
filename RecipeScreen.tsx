@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 const RecipeScreen = () => {
   return (
     <View>
-      <Text>Hello from RecipeScreen!</Text>
+      
     </View>
   );
 };

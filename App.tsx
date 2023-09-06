@@ -5,10 +5,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import RecipeScreen from './RecipeScreen';
 
-
-
 const navigator = createStackNavigator();
 
+//Header options
 const HeaderBarCustomization = {
   title: 'Let them cook',
   
