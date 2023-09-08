@@ -1,17 +1,14 @@
 import React from 'react';
-import 'react-native-gesture-handler';
-import { View, Text } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import RecipeScreen from './RecipeScreen';
 import AddRecipe from './AddRecipe';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const navigator = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 //Header options
 const HeaderBarCustomization = {
-  title: 'Let them cook',
-  
   headerStyle: {
     backgroundColor: '#2DB666',
   },
@@ -22,10 +19,10 @@ const HeaderBarCustomization = {
 const App = () => {
   return (
     <NavigationContainer>
-      <navigator.Navigator>
-        <navigator.Screen name="RecipeScreen" component={RecipeScreen} options={HeaderBarCustomization}/>
-        <navigator.Screen name="AddRecipeScreen" component={AddRecipe}/>
-      </navigator.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={RecipeScreen} options={HeaderBarCustomization}/>
+        <Tab.Screen name="New recipe" component={AddRecipe} options={HeaderBarCustomization}/>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
