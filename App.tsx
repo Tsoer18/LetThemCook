@@ -19,7 +19,7 @@ const HeaderBarCustomization = {
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{tabBarActiveTintColor: 'white', tabBarActiveBackgroundColor: '#2DB666'}}>
         <Tab.Screen name="Home" component={RecipeScreen} options={HeaderBarCustomization}/>
         <Tab.Screen name="New recipe" component={AddRecipe} options={HeaderBarCustomization}/>
       </Tab.Navigator>

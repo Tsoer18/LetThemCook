@@ -5,17 +5,13 @@ import { TouchableOpacity } from 'react-native';
 //import { Image } from 'react-native-reanimated/lib/typescript/Animated';
 
 
-const RecipeScreen = ({navigation}) => {
+const RecipeScreen = () => {
   return (
     <View style={styles.container}>
 
     </View>
   );
 };
-
-const handlePress = ({}) =>{
-  //navigation.navigate('AddrecipeScreen');
-}
 
 const styles = StyleSheet.create(
   {
