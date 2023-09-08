@@ -1,14 +1,14 @@
 import { NavigationRouteContext } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput,} from 'react-native';
 import { TouchableOpacity } from 'react-native';
-//import { Image } from 'react-native-reanimated/lib/typescript/Animated';
+
 
 
 const RecipeScreen = () => {
   return (
     <View style={styles.container}>
-
+      
     </View>
   );
 };
