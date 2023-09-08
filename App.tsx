@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import RecipeScreen from './RecipeScreen';
+import AddRecipe from './AddRecipe';
 
 const navigator = createStackNavigator();
 
@@ -23,6 +24,7 @@ const App = () => {
     <NavigationContainer>
       <navigator.Navigator>
         <navigator.Screen name="RecipeScreen" component={RecipeScreen} options={HeaderBarCustomization}/>
+        <navigator.Screen name="AddRecipeScreen" component={AddRecipe}/>
       </navigator.Navigator>
     </NavigationContainer>
   );
