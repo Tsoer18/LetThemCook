@@ -47,7 +47,6 @@ const AddRecipe = () => {
     return (
         <View style={styles.container}>
            
-
             <TouchableOpacity onPress={handleImagePicker}>
                 <Text style={styles.text}>
                     Name of Recipe
@@ -67,34 +66,35 @@ const AddRecipe = () => {
                 Ingredients
             </Text>
 
-            <TextInput
-                style={styles.inputFieldIngredient}
-                value={ingredient1}
-                placeholder='Add an ingredient'
-                placeholderTextColor='grey'
-                onChangeText={onChangeIngredient1}
-            />
+            <View style={styles.flex}>
 
-            <TextInput
-                style={styles.inputFieldIngredient}
-                value={amount}
-                placeholder='amount'
-                placeholderTextColor= 'grey'
-                onChangeText={onChangeAmount}
-            />
+                <TextInput
+                    style={styles.inputFieldIngredient}
+                    value={ingredient1}
+                    placeholder='Add an ingredient'
+                    placeholderTextColor='grey'
+                    onChangeText={onChangeIngredient1}
+                />
 
-            
-            <Dropdown 
-                labelField="label"
-                data={units}
-                search
-                onChange={ item => {setValue(item.value );}}
-                valueField="value"
-                value={value}
-            />
-
-        
+                <TextInput
+                    style={styles.inputFieldIngredient}
+                    value={amount}
+                    placeholder='amount'
+                    placeholderTextColor= 'grey'
+                    onChangeText={onChangeAmount}
+                />
                 
+                <Dropdown 
+                    style={styles.dropDown}
+                    labelField="label"
+                    data={units}
+                    onChange={ item => {setValue(item.value );}}
+                    valueField="value"
+                    value={value}
+                />
+
+            </View>
+    
             <TouchableOpacity onPress={handleAddIngredient}>
                 <Text style={styles.addFieldText}>
                     add ingredient
@@ -119,9 +119,9 @@ const styles = StyleSheet.create({
     inputField: {
         height: 40,
         width: 300,
-        borderRadius: 15,
+        borderRadius: 6,
 
-        margin: 12,
+        margin: 5,
         borderWidth: 1,
         padding: 10,
 
@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
       inputFieldIngredient: {
         height: 40,
         
-        borderRadius: 15,
+        borderRadius: 6,
 
-        margin: 12,
+        margin: 5,
         borderWidth: 1,
         padding: 10,
 
@@ -146,6 +146,21 @@ const styles = StyleSheet.create({
         color: 'grey',
         fontSize: 18,
         textDecorationLine: 'underline'
+      },
+      flex: {
+          flex: 1,
+          flexDirection: 'row',
+      },
+      dropDown: {
+          borderColor: 'black',
+          borderWidth: 1,
+          borderRadius: 6,
+
+          height: 40,
+          width: 80,
+
+          padding: 10
+          
       }
 
   });
