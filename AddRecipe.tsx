@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import { View, Text, StyleSheet, TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
+import { FlatList } from 'react-native-gesture-handler';
 import { CALLBACK_TYPE } from 'react-native-gesture-handler/lib/typescript/handlers/gestures/gesture';
 import * as ImagePicker from 'react-native-image-picker';
+import Ingredient from './ingredient';
 
 
 
@@ -36,12 +38,19 @@ const AddRecipe = () => {
     const [ingredient1, onChangeIngredient1] = React.useState('');
     const [amount, onChangeAmount] = React.useState('');
 
-    const units = [{label: 'gram', value: 'g'}]
+    const units = [{label: 'gram', value: 'g'}];
 
     const [value, setValue] = React.useState('');
 
-    const handleAddIngredient = () =>{
+    var ingredientArray = new Array();
 
+    const handleAddIngredient = () =>{
+        
+        ingredientArray.push(new Ingredient(ingredient1, amount));
+
+        const newIngredient = {ingredient1, amount}
+    
+        console.log(ingredientArray)
     }
     
     return (
@@ -94,7 +103,7 @@ const AddRecipe = () => {
                 />
 
             </View>
-    
+            
             <TouchableOpacity onPress={handleAddIngredient}>
                 <Text style={styles.addFieldText}>
                     add ingredient
@@ -155,10 +164,13 @@ const styles = StyleSheet.create({
           borderColor: 'black',
           borderWidth: 1,
           borderRadius: 6,
+          tintColor: 'black',
+          color: 'black',
 
           height: 40,
           width: 80,
 
+          margin: 5,
           padding: 10
           
       }
