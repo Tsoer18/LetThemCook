@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { View, Text, StyleSheet, TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native';
 import { CALLBACK_TYPE } from 'react-native-gesture-handler/lib/typescript/handlers/gestures/gesture';
 import * as ImagePicker from 'react-native-image-picker';
-import Ingredient from './ingredient';
+import Ingredient from './Ingredient';
 
 
 
@@ -103,7 +103,10 @@ const AddRecipe = () => {
                 />
 
             </View>
-            
+
+           
+                
+
             <TouchableOpacity onPress={handleAddIngredient}>
                 <Text style={styles.addFieldText}>
                     add ingredient
