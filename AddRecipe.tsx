@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TextInput} from 'react-native';
+import { View, Text, StyleSheet, TextInput, FlatList} from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
-import { FlatList } from 'react-native';
-import { CALLBACK_TYPE } from 'react-native-gesture-handler/lib/typescript/handlers/gestures/gesture';
 import * as ImagePicker from 'react-native-image-picker';
 import Ingredient from './Ingredient';
 
@@ -43,14 +41,14 @@ const AddRecipe = () => {
     const [value, setValue] = React.useState('');
 
     var ingredientArray = new Array();
+    //ingredientArray.push(new Ingredient("carrot","50"));
 
     const handleAddIngredient = () =>{
         
         ingredientArray.push(new Ingredient(ingredient1, amount));
-
-        const newIngredient = {ingredient1, amount}
     
         console.log(ingredientArray)
+        console.log(ingredientArray[0].ingredient)
     }
     
     return (
@@ -68,7 +66,6 @@ const AddRecipe = () => {
                 placeholder='Add a recipe title'
                 placeholderTextColor='grey'
                 onChangeText={onChangeRecipeName}
-
             />
 
             <Text style={styles.text}>
@@ -104,7 +101,12 @@ const AddRecipe = () => {
 
             </View>
 
-           
+            <FlatList 
+                data={ingredientArray}
+                keyExtractor={(item) => item.ingredient}
+                renderItem={({item}) => (<Text style={styles.text}>{item.ingredient}{item.amount}</Text>)}
+                extraData={ingredientArray}
+                />
                 
 
             <TouchableOpacity onPress={handleAddIngredient}>
